@@ -23,7 +23,7 @@ namespace CalculatorForExceptionHandling
             double result = firstNumber * secondNumber;
             Console.WriteLine("The result of the multiplication is: " + result);
         }
-        //tried to avoid use of unnecessary exception handling for division by zero
+        //tried to avoid use of exception handling for division by zero
         public void Division(double firstNumber, double secondNumber)
         {
             if (secondNumber == 0)
