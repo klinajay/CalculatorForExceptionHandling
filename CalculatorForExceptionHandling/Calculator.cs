@@ -12,6 +12,7 @@ namespace CalculatorForExceptionHandling
         double secondNumber;
         int integerNumber;
         string operation;
+        bool isExceptionOccured = false;
         public void TakeInput()
         {
 
@@ -111,15 +112,29 @@ namespace CalculatorForExceptionHandling
             }
             catch (ArgumentOutOfRangeException ex)
             {
+                isExceptionOccured = true;
                 Console.WriteLine("Incorrect operation enterd: " + ex.ParamName);
             }
             catch (FormatException ex)
             {
+                isExceptionOccured = true;
                 Console.WriteLine(ex.Message);
             }
             catch (Exception ex)
             {
+                isExceptionOccured = true;
                 Console.WriteLine("An error occured: " + ex.Message);
+            }
+            finally
+            {
+                if (!isExceptionOccured)
+                {
+                    Console.WriteLine("The operation is completed");
+                }
+                else
+                {
+                    Console.WriteLine("The operation could not completed");
+                }
             }
         }
     }
