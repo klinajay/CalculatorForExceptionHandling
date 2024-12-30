@@ -10,10 +10,11 @@ namespace CalculatorForExceptionHandling
     {
         double firstNumber;
         double secondNumber;
+        int integerNumber;
         string operation;
         public void TakeInput()
         {
-            
+
             Console.WriteLine("Enter the operation you want to perform: ");
             operation = Console.ReadLine();
             checkOperationType();
@@ -28,8 +29,33 @@ namespace CalculatorForExceptionHandling
         }
         public void TakeSingleNumberInput()
         {
-            Console.WriteLine("Enter the number: ");
-             firstNumber = Convert.ToDouble(Console.ReadLine());
+            try
+            {
+                if (operation == "factorial")
+                {
+                    Console.WriteLine("Enter the integer number: ");
+                    if (int.TryParse(Console.ReadLine(), out integerNumber))
+                    {
+                        firstNumber = integerNumber;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please enter an integer number");
+                        throw new FormatException("Invalid input for factorial operation");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Enter the number: ");
+                    firstNumber = Convert.ToDouble(Console.ReadLine());
+                }
+            }
+            catch (FormatException ex)
+            {
+                
+                throw;
+            }
+
         }
         public void checkOperationType()
         {
@@ -80,12 +106,20 @@ namespace CalculatorForExceptionHandling
                         break;
                     default:
                         throw new ArgumentOutOfRangeException(operation);
-                        
+
                 }
             }
             catch (ArgumentOutOfRangeException ex)
             {
                 Console.WriteLine("Incorrect operation enterd: " + ex.ParamName);
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occured: " + ex.Message);
             }
         }
     }
