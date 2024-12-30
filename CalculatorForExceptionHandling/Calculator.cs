@@ -106,14 +106,14 @@ namespace CalculatorForExceptionHandling
                         factorialoperation.Factorial((int)firstNumber);
                         break;
                     default:
-                        throw new ArgumentOutOfRangeException(operation);
+                        throw new OperationNotValidException(operation);
 
                 }
             }
-            catch (ArgumentOutOfRangeException ex)
+            catch (OperationNotValidException ex)
             {
                 isExceptionOccured = true;
-                Console.WriteLine("Incorrect operation enterd: " + ex.ParamName);
+                Console.WriteLine(ex.ToString());
             }
             catch (FormatException ex)
             {
