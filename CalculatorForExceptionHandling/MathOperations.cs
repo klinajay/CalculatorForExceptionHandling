@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalculatorForExceptionHandling
 {
-    internal class MathOperations
+    public class MathOperations
     {
         public void Factorial(int firstNumber)
         {

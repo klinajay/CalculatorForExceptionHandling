@@ -6,13 +6,32 @@ using System.Threading.Tasks;
 
 namespace CalculatorForExceptionHandling
 {
-    internal class Calculator
+    public class Calculator
     {
         double firstNumber;
         double secondNumber;
         int integerNumber;
         string operation;
         bool isExceptionOccured = false;
+        public  Calculator(double firstNumber , double secondNumber , string operation)
+        {
+            this.firstNumber = firstNumber;
+            this.secondNumber = secondNumber;
+            this.operation = operation;
+            
+        }
+        public  Calculator()
+        {
+            this.firstNumber = double.NaN;
+            this.secondNumber = double.NaN;
+            this.operation = null;
+            
+        }
+        public void Calculate()
+        {
+            checkOperationType();
+
+        }
         public void TakeInput()
         {
 
@@ -58,6 +77,7 @@ namespace CalculatorForExceptionHandling
             }
 
         }
+
         public void checkOperationType()
         {
             try
@@ -65,42 +85,74 @@ namespace CalculatorForExceptionHandling
                 switch (operation)
                 {
                     case "+":
-                        TakeTwoNumbersInput();
+                        if(firstNumber == double.NaN || secondNumber == double.NaN)
+                        {
+                            TakeTwoNumbersInput();
+                        }
+                        
                         ArithmaticOperations additionOperation = new ArithmaticOperations();
                         additionOperation.Addition(firstNumber, secondNumber);
                         break;
                     case "-":
-                        TakeTwoNumbersInput();
+                        if (firstNumber == double.NaN || secondNumber == double.NaN)
+                        {
+                            TakeTwoNumbersInput();
+                        }
+
                         ArithmaticOperations subtractionOperation = new ArithmaticOperations();
                         subtractionOperation.Subtraction(firstNumber, secondNumber);
                         break;
                     case "*":
-                        TakeTwoNumbersInput();
+                        if (firstNumber == double.NaN || secondNumber == double.NaN)
+                        {
+                            TakeTwoNumbersInput();
+                        }
+
                         ArithmaticOperations multiplicationOperation = new ArithmaticOperations();
                         multiplicationOperation.Multiplication(firstNumber, secondNumber);
                         break;
                     case "/":
-                        TakeTwoNumbersInput();
+                        if (firstNumber == double.NaN || secondNumber == double.NaN)
+                        {
+                            TakeTwoNumbersInput();
+                        }
+
                         ArithmaticOperations divisionOperation = new ArithmaticOperations();
                         divisionOperation.Division(firstNumber, secondNumber);
                         break;
                     case "sin":
-                        TakeSingleNumberInput();
+                        if (firstNumber == double.NaN )
+                        {
+                            TakeSingleNumberInput();
+                        }
+
                         TrigonometricOperations sinOperation = new TrigonometricOperations();
                         sinOperation.Sin(firstNumber);
                         break;
                     case "cos":
-                        TakeSingleNumberInput();
+                        if (firstNumber == double.NaN)
+                        {
+                            TakeSingleNumberInput();
+                        }
+
                         TrigonometricOperations cosOperation = new TrigonometricOperations();
                         cosOperation.Cos(firstNumber);
                         break;
                     case "tan":
-                        TakeSingleNumberInput();
+                        if (firstNumber == double.NaN)
+                        {
+                            TakeSingleNumberInput();
+                        }
+
                         TrigonometricOperations tanOperation = new TrigonometricOperations();
                         tanOperation.Tan(firstNumber);
                         break;
                     case "factorial":
-                        TakeSingleNumberInput();
+                        if (firstNumber == double.NaN)
+                        {
+                            TakeSingleNumberInput();
+                        }
+
                         MathOperations factorialoperation = new MathOperations();
                         Console.WriteLine((int)firstNumber);
                         factorialoperation.Factorial((int)firstNumber);
@@ -114,6 +166,7 @@ namespace CalculatorForExceptionHandling
             {
                 isExceptionOccured = true;
                 Console.WriteLine(ex.ToString());
+                throw;
             }
             catch (FormatException ex)
             {

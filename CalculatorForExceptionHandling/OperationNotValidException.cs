@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalculatorForExceptionHandling
 {
-    internal class OperationNotValidException : CalculatorException
+    public class OperationNotValidException : CalculatorException
     {
         public const string defaultMessage = "The operation is not valid";
         public string Operation { get; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalculatorForExceptionHandling
 {
-    internal class TrigonometricOperations
+    public class TrigonometricOperations
     {
         public void Sin(double firstNumber)
         {

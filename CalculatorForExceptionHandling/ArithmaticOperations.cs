@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalculatorForExceptionHandling
 {
-    internal class ArithmaticOperations
+    public class ArithmaticOperations
     {
         public void Addition(double firstNumber, double secondNumber)
         {

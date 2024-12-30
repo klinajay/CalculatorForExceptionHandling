@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalculatorForExceptionHandling
 {
-    internal class CalculatorException : Exception
+    public class CalculatorException : Exception
     {
         public static string defaultMessage = "An error occured in the calculator application";
         public CalculatorException() : base(defaultMessage)

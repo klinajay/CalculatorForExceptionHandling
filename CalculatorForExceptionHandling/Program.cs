@@ -7,9 +7,10 @@ internal class Program
         AppDomain currentDomain = AppDomain.CurrentDomain;
         currentDomain.UnhandledException += new UnhandledExceptionEventHandler(Handler);
         Console.WriteLine("Hello, World!");
-        Calculator calculator = new Calculator();
-        calculator.TakeInput();
-        
+        Calculator calculator = new Calculator(1,1,"1");
+        calculator.Calculate();
+        //calculator.TakeInput();
+
     }
     public static void Handler(object source , UnhandledExceptionEventArgs e)
     {

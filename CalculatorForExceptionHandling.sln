@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorForExceptionHandling", "CalculatorForExceptionHandling\CalculatorForExceptionHandling.csproj", "{DE8D6515-451C-493C-A321-96DAB33CCF65}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomExceptionTest", "CustomExceptionTest\CustomExceptionTest.csproj", "{945EE06B-5A2A-47B9-9DD9-875FB18C3BC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DE8D6515-451C-493C-A321-96DAB33CCF65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE8D6515-451C-493C-A321-96DAB33CCF65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE8D6515-451C-493C-A321-96DAB33CCF65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{945EE06B-5A2A-47B9-9DD9-875FB18C3BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{945EE06B-5A2A-47B9-9DD9-875FB18C3BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{945EE06B-5A2A-47B9-9DD9-875FB18C3BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{945EE06B-5A2A-47B9-9DD9-875FB18C3BC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
